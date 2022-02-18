@@ -1,0 +1,108 @@
+@prefix : <http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#> . 
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> . 
+@prefix geo: <http://www.opengis.net/ont/geosparql#> . 
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>. 
+:Captura_de_pantalla_2021-10-08_a_las_10.44.09.png rdf:type owl:NamedIndividual , 
+ :Image ; 
+ :hasArousal :arousalCaptura_de_pantalla_2021-10-08_a_las_10.44.09.png ; 
+ :hasNer :ner1Captura_de_pantalla_2021-10-08_a_las_10.44.09.png ,
+:ner2Captura_de_pantalla_2021-10-08_a_las_10.44.09.png ,
+:ner3Captura_de_pantalla_2021-10-08_a_las_10.44.09.png ;
+:hasText :3ace562f-d0ce-4202-a970-5649392cc238 ; 
+:hasValence :valenceCaptura_de_pantalla_2021-10-08_a_las_10.44.09.png ; 
+:isSemSegContainer :semsegtop1classCaptura_de_pantalla_2021-10-08_a_las_10.44.09.png , 
+:semsegtop2classCaptura_de_pantalla_2021-10-08_a_las_10.44.09.png , 
+:semsegtop3classCaptura_de_pantalla_2021-10-08_a_las_10.44.09.png , 
+:semsegtop4classCaptura_de_pantalla_2021-10-08_a_las_10.44.09.png ;
+:isVergeContainer :vergetop1classCaptura_de_pantalla_2021-10-08_a_las_10.44.09.png ;
+:hasDirection "149.8245775641324" ; 
+ :hasFocalLength "" ; 
+ :hasFocalLengthIn35 "" ; 
+ :hasImageHeight "" ; 
+ :hasImageWidth "" ; 
+ :hasLat "41.36945606374258" ; 
+ :hasLng "2.116465765832749" ; 
+ :hasPitch "-2.7408297361283473" ; 
+ :hasSegmImageability "6.7081281780521484" ; 
+ :hasTextImageability "5.52" ; 
+ :hasVergeImageability "6.4" ; 
+:hasVisualAnalysisTimestamp "2021-10-11 13:10:57.153876+02:00CET" ; 
+ :hasXResolution "" ; 
+ :hasYResolution "" ; 
+ :hasZoom "0.9999999999999997" ; 
+:isLandmark "true"^^xsd:boolean ; 
+  :isName "Captura de pantalla 2021-10-08 a las 10.44.09.png" . 
+ :arousalCaptura_de_pantalla_2021-10-08_a_las_10.44.09.png rdf:type owl:NamedIndividual , 
+ :Arousal ; 
+ :hasProbability 1 ; 
+ :hasValue "calm" . 
+ :ner1Captura_de_pantalla_2021-10-08_a_las_10.44.09.png rdf:type owl:NamedIndividual  , 
+ :Ner ; 
+:hasBegin 20 ; 
+ :hasEnd 29 ; 
+ :isCategory "CONCEPT" ; 
+ :hasCoveredText "referente" ; 
+ :hasLabel "referente"  . 
+:ner2Captura_de_pantalla_2021-10-08_a_las_10.44.09.png rdf:type owl:NamedIndividual  , 
+ :Ner ; 
+:hasBegin 36 ; 
+ :hasEnd 42 ; 
+ :isCategory "CONCEPT" ; 
+ :hasCoveredText "ciudad" ; 
+ :hasLabel "ciudad"  ; 
+   :NerhasImageabilityScore 5.65   . 
+:ner3Captura_de_pantalla_2021-10-08_a_las_10.44.09.png rdf:type owl:NamedIndividual  , 
+ :Ner ; 
+:hasBegin 48 ; 
+ :hasEnd 52 ; 
+ :isCategory "CONCEPT" ; 
+ :hasCoveredText "zona" ; 
+ :hasLabel "zona"  ; 
+   :NerhasImageabilityScore 5.39   . 
+:semsegtop1classCaptura_de_pantalla_2021-10-08_a_las_10.44.09.png rdf:type owl:NamedIndividual , 
+ :SemSegContainer ; 
+ :isSemSegLabel :sky ; 
+:hasAccuracy "0.9811816681393201" ; 
+ :hasPercentage "0.2795066738375788" ; 
+ :semseg_ta_contr_imageability "0.3760228856601187" . 
+ :semsegtop2classCaptura_de_pantalla_2021-10-08_a_las_10.44.09.png rdf:type owl:NamedIndividual , 
+ :SemSegContainer ; 
+ :isSemSegLabel :road ; 
+:hasAccuracy "0.8190743176892633" ; 
+ :hasPercentage "0.19818608517087957" ; 
+ :semseg_ta_contr_imageability "0.2552341824663215" . 
+ :semsegtop3classCaptura_de_pantalla_2021-10-08_a_las_10.44.09.png rdf:type owl:NamedIndividual , 
+ :SemSegContainer ; 
+ :isSemSegLabel :building ; 
+:hasAccuracy "0.5551414042072146" ; 
+ :hasPercentage "0.13741260450789616" ; 
+ :semseg_ta_contr_imageability "0.18322889270997889" . 
+ :semsegtop4classCaptura_de_pantalla_2021-10-08_a_las_10.44.09.png rdf:type owl:NamedIndividual , 
+ :SemSegContainer ; 
+ :isSemSegLabel :sidewalk ; 
+:hasAccuracy "0.6159927530424074" ; 
+ :hasPercentage "0.13729037305040825" ; 
+ :semseg_ta_contr_imageability "0.1855140391635809" . 
+ :sentence_1_Captura_de_pantalla_2021-10-08_a_las_10.44.09.png rdf:type owl:NamedIndividual , 
+ :Sentence ; 
+ :hasBegin "0" ; 
+ :hasCoveredText "Arbol emblematico y referente en la ciudad y la zona" ; 
+ :hasEmotag "pos" ; 
+ :hasEmotagConfidence "0.5005629601203402" ; 
+ :hasEnd "52" . 
+ :3ace562f-d0ce-4202-a970-5649392cc238 rdf:type owl:NamedIndividual , 
+ :Text ; 
+ :isLang  "ca" ; 
+ :isText "Arbol emblematico y referente en la ciudad y la zona" ; 
+  :hasSentence :sentence_1_Captura_de_pantalla_2021-10-08_a_las_10.44.09.png . 
+:valenceCaptura_de_pantalla_2021-10-08_a_las_10.44.09.png rdf:type owl:NamedIndividual , 
+ :Valence ; 
+ :hasProbability "1" ; 
+ :hasValue "positive" . 
+ :vergetop1classCaptura_de_pantalla_2021-10-08_a_las_10.44.09.png  rdf:type owl:NamedIndividual , 
+ :VergeContainer ; 
+ :isVergeLabel "/p/plaza" ; 
+ :hasProbability "0.43215760588645935" ; 
+ :verge_ta_contr_imageability "1" . 
+ 

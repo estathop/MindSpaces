@@ -1,0 +1,25 @@
+*********To set grPC**********
+curl -OL https://github.com/protocolbuffers/protobuf/releases/download/v3.11.4/protoc-3.11.4-linux-x86_64.zip
+unzip protoc-3.11.4-linux-x86_64.zip -d protoc3
+sudo mv protoc3/bin/* /usr/local/bin/
+sudo mv protoc3/include/* /usr/local/include/
+sudo chown $USER /usr/local/bin/protoc
+sudo chown -R $USER /usr/local/include/google
+#check protoc version
+protoc --version
+********************************
+install grpc packages to your python environment by running
+    pip install grpcio
+    pip install grpcio-tools
+********************************
+whenever you modify echo.proto run:
+	python -m grpc_tools.protoc --proto_path=. ./echo/echo.proto --python_out=. --grpc_python_out=.
+to generate pb2 + pb2_grpc py files
+
+to start the server run in the python environment:
+	python grpc_server.py 
+
+gsr_analysis & sentiment_analysis contain the sample Threads classes for the corresponding CERTH components ( GSRThread & SentimentThread classes respectively)
+
+config.py : is a configuration file
+#Set the PATH to the directory containing the VR json results

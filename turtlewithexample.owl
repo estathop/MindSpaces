@@ -1,0 +1,2318 @@
+@prefix : <http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17> .
+
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#hasArousal
+:hasArousal rdf:type owl:ObjectProperty ;
+            rdfs:domain :Image ;
+            rdfs:range :Arousal .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#hasNer
+:hasNer rdf:type owl:ObjectProperty ;
+        rdfs:domain :Text ;
+        rdfs:range :Ner .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#hasSentence
+:hasSentence rdf:type owl:ObjectProperty ;
+             rdfs:domain :Text ;
+             rdfs:range :Sentence .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#hasText
+:hasText rdf:type owl:ObjectProperty ;
+         rdfs:domain :Image ;
+         rdfs:range :Text .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#hasURI
+:hasURI rdf:type owl:ObjectProperty ;
+        rdfs:domain :Ner ;
+        rdfs:range :URI .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#hasValence
+:hasValence rdf:type owl:ObjectProperty ;
+            rdfs:domain :Image ;
+            rdfs:range :Valence .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#isSemSegContainer
+:isSemSegContainer rdf:type owl:ObjectProperty ;
+                   rdfs:domain :Image ;
+                   rdfs:range :SemSegContainer .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#isSemSegLabel
+:isSemSegLabel rdf:type owl:ObjectProperty ;
+               rdfs:domain :SemSegContainer ;
+               rdfs:range :SemSegLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#isVergeContainer
+:isVergeContainer rdf:type owl:ObjectProperty ;
+                  rdfs:domain :Image ;
+                  rdfs:range :VergeContainer .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#isVergeLabel
+:isVergeLabel rdf:type owl:ObjectProperty ;
+              rdfs:domain :VergeContainer ;
+              rdfs:range :VergeLabel .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#NerhasImageabilityScore
+:NerhasImageabilityScore rdf:type owl:DatatypeProperty ;
+                         rdfs:domain :Ner ;
+                         rdfs:range xsd:double .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#hasAccuracy
+:hasAccuracy rdf:type owl:DatatypeProperty ;
+             rdfs:domain :SemSegContainer ;
+             rdfs:range xsd:double .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#hasBegin
+:hasBegin rdf:type owl:DatatypeProperty ;
+          rdfs:domain [ rdf:type owl:Class ;
+                        owl:unionOf ( :Ner
+                                      :Sentence
+                                    )
+                      ] ;
+          rdfs:range xsd:unsignedInt .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#hasConfidence
+:hasConfidence rdf:type owl:DatatypeProperty ;
+               rdfs:domain :URI ;
+               rdfs:range xsd:double .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#hasCoveredText
+:hasCoveredText rdf:type owl:DatatypeProperty ;
+                rdfs:domain [ rdf:type owl:Class ;
+                              owl:unionOf ( :Ner
+                                            :Sentence
+                                          )
+                            ] ;
+                rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#hasDirection
+:hasDirection rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Image ;
+              rdfs:range xsd:double .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#hasEmotag
+:hasEmotag rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Sentence ;
+           rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#hasEmotagConfidence
+:hasEmotagConfidence rdf:type owl:DatatypeProperty ;
+                     rdfs:domain :Sentence ;
+                     rdfs:range xsd:double .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#hasEnd
+:hasEnd rdf:type owl:DatatypeProperty ;
+        rdfs:domain [ rdf:type owl:Class ;
+                      owl:unionOf ( :Ner
+                                    :Sentence
+                                  )
+                    ] ;
+        rdfs:range xsd:unsignedInt .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#hasFocalLength
+:hasFocalLength rdf:type owl:DatatypeProperty ;
+                rdfs:domain :Image ;
+                rdfs:range xsd:float .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#hasFocalLengthIn35
+:hasFocalLengthIn35 rdf:type owl:DatatypeProperty ;
+                    rdfs:domain :Image ;
+                    rdfs:range xsd:float .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#hasImageHeight
+:hasImageHeight rdf:type owl:DatatypeProperty ;
+                rdfs:domain :Image ;
+                rdfs:range xsd:unsignedInt .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#hasImageWidth
+:hasImageWidth rdf:type owl:DatatypeProperty ;
+               rdfs:domain :Image ;
+               rdfs:range xsd:unsignedInt .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#hasImageabilityScore
+:hasImageabilityScore rdf:type owl:DatatypeProperty ;
+                      rdfs:domain :Ner ;
+                      rdfs:range xsd:double .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#hasLabel
+:hasLabel rdf:type owl:DatatypeProperty ;
+          rdfs:domain [ rdf:type owl:Class ;
+                        owl:unionOf ( :Ner
+                                      :Sentence
+                                    )
+                      ] ;
+          rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#hasLat
+:hasLat rdf:type owl:DatatypeProperty ;
+        rdfs:domain :Image ;
+        rdfs:range xsd:double .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#hasLng
+:hasLng rdf:type owl:DatatypeProperty ;
+        rdfs:domain :Image ;
+        rdfs:range xsd:double .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#hasPercentage
+:hasPercentage rdf:type owl:DatatypeProperty ;
+               rdfs:domain :SemSegContainer ;
+               rdfs:range xsd:double .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#hasPitch
+:hasPitch rdf:type owl:DatatypeProperty ;
+          rdfs:domain :Image ;
+          rdfs:range xsd:double .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#hasProbability
+:hasProbability rdf:type owl:DatatypeProperty ;
+                rdfs:domain [ rdf:type owl:Class ;
+                              owl:unionOf ( :Arousal
+                                            :Valence
+                                            :VergeContainer
+                                          )
+                            ] ;
+                rdfs:range xsd:double .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#hasSegmImageability
+:hasSegmImageability rdf:type owl:DatatypeProperty ;
+                     rdfs:domain :Image ;
+                     rdfs:range xsd:double .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#hasTextImageability
+:hasTextImageability rdf:type owl:DatatypeProperty ;
+                     rdfs:domain :Image ;
+                     rdfs:range xsd:double .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#hasValue
+:hasValue rdf:type owl:DatatypeProperty ;
+          rdfs:domain [ rdf:type owl:Class ;
+                        owl:unionOf ( :Arousal
+                                      :Valence
+                                    )
+                      ] ;
+          rdfs:range xsd:double .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#hasVergeImageability
+:hasVergeImageability rdf:type owl:DatatypeProperty ;
+                      rdfs:domain :Image ;
+                      rdfs:range xsd:double .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#hasVisualAnalysisTimestamp
+:hasVisualAnalysisTimestamp rdf:type owl:DatatypeProperty ;
+                            rdfs:domain :Image ;
+                            rdfs:range xsd:dateTimeStamp .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#hasXResolution
+:hasXResolution rdf:type owl:DatatypeProperty ;
+                rdfs:domain :Image ;
+                rdfs:range xsd:float .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#hasYResolution
+:hasYResolution rdf:type owl:DatatypeProperty ;
+                rdfs:domain :Image ;
+                rdfs:range xsd:float .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#hasZoom
+:hasZoom rdf:type owl:DatatypeProperty ;
+         rdfs:domain :Image ;
+         rdfs:range xsd:double .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#isCategory
+:isCategory rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Ner ;
+            rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#isLandmark
+:isLandmark rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Image ;
+            rdfs:range xsd:boolean .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#isLang
+:isLang rdf:type owl:DatatypeProperty ;
+        rdfs:domain :Text ;
+        rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#isName
+:isName rdf:type owl:DatatypeProperty .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#isText
+:isText rdf:type owl:DatatypeProperty ;
+        rdfs:domain :Text ;
+        rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#semseg_ta_contr_imageability
+:semseg_ta_contr_imageability rdf:type owl:DatatypeProperty ;
+                              rdfs:domain :SemSegContainer ;
+                              rdfs:range xsd:float .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#verge_ta_contr_imageability
+:verge_ta_contr_imageability rdf:type owl:DatatypeProperty ;
+                             rdfs:domain :VergeContainer ;
+                             rdfs:range xsd:double .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#Arousal
+:Arousal rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#Image
+:Image rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#Ner
+:Ner rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#SemSegContainer
+:SemSegContainer rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#SemSegLabel
+:SemSegLabel rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#Sentence
+:Sentence rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#Text
+:Text rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#URI
+:URI rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#Valence
+:Valence rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#VergeContainer
+:VergeContainer rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#VergeLabel
+:VergeLabel rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://ca.dbpedia.org/resource/Massa
+<http://ca.dbpedia.org/resource/Massa> rdf:type owl:NamedIndividual ,
+                                                :URI ;
+                                       :hasConfidence 0.9994521635650166 .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#Bench
+:Bench rdf:type owl:NamedIndividual ,
+                :SemSegLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#Bicycle
+:Bicycle rdf:type owl:NamedIndividual ,
+                  :SemSegLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#Bridge
+:Bridge rdf:type owl:NamedIndividual ,
+                 :SemSegLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#Building
+:Building rdf:type owl:NamedIndividual ,
+                   :SemSegLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#Bus
+:Bus rdf:type owl:NamedIndividual ,
+              :SemSegLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#Captura_de_pantalla_2021-10-08_a_las_10.43.07.png
+:Captura_de_pantalla_2021-10-08_a_las_10.43.07.png rdf:type owl:NamedIndividual ,
+                                                            :Image ;
+                                                   :hasArousal :arousalCaptura_de_pantalla_2021-10-08_a_las_10.43.07.png ;
+                                                   :hasNer :ner1uuideikonas ,
+                                                           :ner2uuideikonas ,
+                                                           :ner3uuideikonas ;
+                                                   :hasText :uuidtesttext ;
+                                                   :hasValence :valenceCaptura_de_pantalla_2021-10-08_a_las_10.43.07.png ;
+                                                   :isSemSegContainer :semsegtop1classCaptura_de_pantalla_2021-10-08_a_las_10.43.07.png ,
+                                                                      :semsegtop2classCaptura_de_pantalla_2021-10-08_a_las_10.43.07.png ;
+                                                   :isVergeContainer :vergetop1classCaptura_de_pantalla_2021-10-08_a_las_10.43.07.png ;
+                                                   :hasDirection 38.48458931038081 ;
+                                                   :hasFocalLength 44.4444 ;
+                                                   :hasFocalLengthIn35 35.3535 ;
+                                                   :hasImageHeight 1920 ;
+                                                   :hasImageWidth 1080 ;
+                                                   :hasLat 41.36380283917374 ;
+                                                   :hasLng 41.36380283917374 ;
+                                                   :hasPitch -3.5422977380560923 ;
+                                                   :hasSegmImageability 6.640659993682381 ;
+                                                   :hasTextImageability 5.68159680971416 ;
+                                                   :hasVergeImageability 6.894310260625479 ;
+                                                   :hasVisualAnalysisTimestamp "2021-10-11 13:10:57.153876+02:00CET" ;
+                                                   :hasXResolution 123.34545 ;
+                                                   :hasYResolution 22.446445 ;
+                                                   :hasZoom 0 ;
+                                                   :isLandmark "false"^^xsd:boolean ;
+                                                   :isName "Captura de pantalla 2021-10-08 a las 10.43.07.png" .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#Car
+:Car rdf:type owl:NamedIndividual ,
+              :SemSegLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#Fence
+:Fence rdf:type owl:NamedIndividual ,
+                :SemSegLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#Motorcycle
+:Motorcycle rdf:type owl:NamedIndividual ,
+                     :SemSegLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#Person
+:Person rdf:type owl:NamedIndividual ,
+                 :SemSegLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#Pole
+:Pole rdf:type owl:NamedIndividual ,
+               :SemSegLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#Rider
+:Rider rdf:type owl:NamedIndividual ,
+                :SemSegLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#Road
+:Road rdf:type owl:NamedIndividual ,
+               :SemSegLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#Sidewalk
+:Sidewalk rdf:type owl:NamedIndividual ,
+                   :SemSegLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#Sky
+:Sky rdf:type owl:NamedIndividual ,
+              :SemSegLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#Terrain
+:Terrain rdf:type owl:NamedIndividual ,
+                  :SemSegLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#TrafficLight
+:TrafficLight rdf:type owl:NamedIndividual ,
+                       :SemSegLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#TrafficSign
+:TrafficSign rdf:type owl:NamedIndividual ,
+                      :SemSegLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#Train
+:Train rdf:type owl:NamedIndividual ,
+                :SemSegLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#TrashCan
+:TrashCan rdf:type owl:NamedIndividual ,
+                   :SemSegLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#Truck
+:Truck rdf:type owl:NamedIndividual ,
+                :SemSegLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#Tunnel
+:Tunnel rdf:type owl:NamedIndividual ,
+                 :SemSegLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#Vegetation
+:Vegetation rdf:type owl:NamedIndividual ,
+                     :SemSegLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#Wall
+:Wall rdf:type owl:NamedIndividual ,
+               :SemSegLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#arousalCaptura_de_pantalla_2021-10-08_a_las_10.43.07.png
+:arousalCaptura_de_pantalla_2021-10-08_a_las_10.43.07.png rdf:type owl:NamedIndividual ,
+                                                                   :Arousal ;
+                                                          :hasProbability 1 ;
+                                                          :hasValue "calm" .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#ner1uuideikonas
+:ner1uuideikonas rdf:type owl:NamedIndividual ,
+                          :Ner ;
+                 :hasBegin 62 ;
+                 :hasCoveredText "Carrers" ;
+                 :hasEnd 69 ;
+                 :hasLabel "Carrers" ;
+                 :isCategory "PER" .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#ner2uuideikonas
+:ner2uuideikonas rdf:type owl:NamedIndividual ,
+                          :Ner ;
+                 :NerhasImageabilityScore 4.485451936748125 ;
+                 :hasBegin 40 ;
+                 :hasCoveredText "avinguda no m'agrada" ;
+                 :hasEnd 60 ;
+                 :hasLabel "avinguda no m'agrada" ;
+                 :isCategory "CONCEPT" .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#ner3uuideikonas
+:ner3uuideikonas rdf:type owl:NamedIndividual ,
+                          :Ner ;
+                 :hasURI <http://ca.dbpedia.org/resource/Massa> ;
+                 :NerhasImageabilityScore 6.8777416826801945 ;
+                 :hasBegin 62 ;
+                 :hasCoveredText "Carrers massa estrets" ;
+                 :hasEnd 83 ;
+                 :hasLabel "Carrers massa estrets" ;
+                 :isCategory "CONCEPT" .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#semsegtop1classCaptura_de_pantalla_2021-10-08_a_las_10.43.07.png
+:semsegtop1classCaptura_de_pantalla_2021-10-08_a_las_10.43.07.png rdf:type owl:NamedIndividual ,
+                                                                           :SemSegContainer ;
+                                                                  :isSemSegLabel :Building ;
+                                                                  :hasAccuracy 0.697203356426519 ;
+                                                                  :hasPercentage 0.378636385860265 ;
+                                                                  :semseg_ta_contr_imageability 0.6197928718079361 .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#semsegtop2classCaptura_de_pantalla_2021-10-08_a_las_10.43.07.png
+:semsegtop2classCaptura_de_pantalla_2021-10-08_a_las_10.43.07.png rdf:type owl:NamedIndividual ,
+                                                                           :SemSegContainer ;
+                                                                  :isSemSegLabel :Road ;
+                                                                  :hasAccuracy 0.8288946759578085 ;
+                                                                  :hasPercentage 0.24049039260744146 ;
+                                                                  :semseg_ta_contr_imageability 0.38020712819206387 .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#uuid2_sentence_imageID
+:uuid2_sentence_imageID rdf:type owl:NamedIndividual ,
+                                 :Sentence ;
+                        :hasBegin 62 ;
+                        :hasCoveredText "Carrers massa estrets," ;
+                        :hasEmotag "pos" ;
+                        :hasEmotagConfidence 0.8727876106194698 ;
+                        :hasEnd 84 .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#uuid_sentence_imageID
+:uuid_sentence_imageID rdf:type owl:NamedIndividual ,
+                                :Sentence ;
+                       :hasBegin 0 ;
+                       :hasCoveredText "Tot i que podria anar per aquí, aquesta avinguda no m'agrada." ;
+                       :hasEmotag "pos" ;
+                       :hasEmotagConfidence 0.5240272506278976 ;
+                       :hasEnd 61 .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#uuidtesttext
+:uuidtesttext rdf:type owl:NamedIndividual ,
+                       :Text ;
+              :hasSentence :uuid2_sentence_imageID ,
+                           :uuid_sentence_imageID ;
+              :isLang "en" ;
+              :isText "Tot i que podria anar per aquí, aquesta avinguda no m'agrada. Carrers massa estrets," .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#valenceCaptura_de_pantalla_2021-10-08_a_las_10.43.07.png
+:valenceCaptura_de_pantalla_2021-10-08_a_las_10.43.07.png rdf:type owl:NamedIndividual ,
+                                                                   :Valence ;
+                                                          :hasProbability 1 ;
+                                                          :hasValue "positive" .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#vergetop1classCaptura_de_pantalla_2021-10-08_a_las_10.43.07.png
+:vergetop1classCaptura_de_pantalla_2021-10-08_a_las_10.43.07.png rdf:type owl:NamedIndividual ,
+                                                                          :VergeContainer ;
+                                                                 :isVergeLabel <http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/p/parking_garage/outdoor_256> ;
+                                                                 :hasProbability 0.6885106563568115 ;
+                                                                 :verge_ta_contr_imageability 1 .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/a/airfield_0
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/a/airfield_0> rdf:type owl:NamedIndividual ,
+                                                                                                    :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/a/airplane_cabin_1
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/a/airplane_cabin_1> rdf:type owl:NamedIndividual ,
+                                                                                                          :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/a/airport_terminal_2
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/a/airport_terminal_2> rdf:type owl:NamedIndividual ,
+                                                                                                            :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/a/alcove_3
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/a/alcove_3> rdf:type owl:NamedIndividual ,
+                                                                                                  :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/a/alley_4
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/a/alley_4> rdf:type owl:NamedIndividual ,
+                                                                                                 :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/a/amphitheater_5
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/a/amphitheater_5> rdf:type owl:NamedIndividual ,
+                                                                                                        :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/a/amusement_arcade_6
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/a/amusement_arcade_6> rdf:type owl:NamedIndividual ,
+                                                                                                            :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/a/amusement_park_7
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/a/amusement_park_7> rdf:type owl:NamedIndividual ,
+                                                                                                          :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/a/aquarium_9
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/a/aquarium_9> rdf:type owl:NamedIndividual ,
+                                                                                                    :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/a/aqueduct_10
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/a/aqueduct_10> rdf:type owl:NamedIndividual ,
+                                                                                                     :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/a/arcade_11
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/a/arcade_11> rdf:type owl:NamedIndividual ,
+                                                                                                   :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/a/arch_12
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/a/arch_12> rdf:type owl:NamedIndividual ,
+                                                                                                 :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/a/archaelogical_excavation_13
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/a/archaelogical_excavation_13> rdf:type owl:NamedIndividual ,
+                                                                                                                     :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/a/archive_14
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/a/archive_14> rdf:type owl:NamedIndividual ,
+                                                                                                    :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/a/army_base_18
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/a/army_base_18> rdf:type owl:NamedIndividual ,
+                                                                                                      :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/a/art_gallery_19
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/a/art_gallery_19> rdf:type owl:NamedIndividual ,
+                                                                                                        :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/a/art_school_20
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/a/art_school_20> rdf:type owl:NamedIndividual ,
+                                                                                                       :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/a/art_studio_21
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/a/art_studio_21> rdf:type owl:NamedIndividual ,
+                                                                                                       :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/a/artists_loft_22
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/a/artists_loft_22> rdf:type owl:NamedIndividual ,
+                                                                                                         :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/a/assembly_line_23
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/a/assembly_line_23> rdf:type owl:NamedIndividual ,
+                                                                                                          :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/a/attic_26
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/a/attic_26> rdf:type owl:NamedIndividual ,
+                                                                                                  :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/a/auditorium_27
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/a/auditorium_27> rdf:type owl:NamedIndividual ,
+                                                                                                       :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/a/auto_factory_28
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/a/auto_factory_28> rdf:type owl:NamedIndividual ,
+                                                                                                         :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/a/auto_showroom_29
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/a/auto_showroom_29> rdf:type owl:NamedIndividual ,
+                                                                                                          :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/a/apartment_building/outdoor_8
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/a/apartment_building/outdoor_8> rdf:type owl:NamedIndividual ,
+                                                                                                                      :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/a/arena/hockey_15
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/a/arena/hockey_15> rdf:type owl:NamedIndividual ,
+                                                                                                         :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/a/arena/performance_16
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/a/arena/performance_16> rdf:type owl:NamedIndividual ,
+                                                                                                              :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/a/arena/rodeo_17
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/a/arena/rodeo_17> rdf:type owl:NamedIndividual ,
+                                                                                                        :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/a/athletic_field/outdoor_24
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/a/athletic_field/outdoor_24> rdf:type owl:NamedIndividual ,
+                                                                                                                   :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/a/atrium/public_25
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/a/atrium/public_25> rdf:type owl:NamedIndividual ,
+                                                                                                          :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/b/badlands_30
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/b/badlands_30> rdf:type owl:NamedIndividual ,
+                                                                                                     :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/b/ball_pit_34
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/b/ball_pit_34> rdf:type owl:NamedIndividual ,
+                                                                                                     :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/b/ballroom_35
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/b/ballroom_35> rdf:type owl:NamedIndividual ,
+                                                                                                     :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/b/bamboo_forest_36
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/b/bamboo_forest_36> rdf:type owl:NamedIndividual ,
+                                                                                                          :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/b/bank_vault_37
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/b/bank_vault_37> rdf:type owl:NamedIndividual ,
+                                                                                                       :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/b/banquet_hall_38
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/b/banquet_hall_38> rdf:type owl:NamedIndividual ,
+                                                                                                         :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/b/bar_39
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/b/bar_39> rdf:type owl:NamedIndividual ,
+                                                                                                :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/b/barn_40
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/b/barn_40> rdf:type owl:NamedIndividual ,
+                                                                                                 :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/b/barndoor_41
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/b/barndoor_41> rdf:type owl:NamedIndividual ,
+                                                                                                     :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/b/baseball_field_42
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/b/baseball_field_42> rdf:type owl:NamedIndividual ,
+                                                                                                           :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/b/basement_43
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/b/basement_43> rdf:type owl:NamedIndividual ,
+                                                                                                     :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/b/bathroom_45
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/b/bathroom_45> rdf:type owl:NamedIndividual ,
+                                                                                                     :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/b/beach_48
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/b/beach_48> rdf:type owl:NamedIndividual ,
+                                                                                                  :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/b/beach_house_49
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/b/beach_house_49> rdf:type owl:NamedIndividual ,
+                                                                                                        :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/b/beauty_salon_50
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/b/beauty_salon_50> rdf:type owl:NamedIndividual ,
+                                                                                                         :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/b/bedchamber_51
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/b/bedchamber_51> rdf:type owl:NamedIndividual ,
+                                                                                                       :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/b/bedroom_52
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/b/bedroom_52> rdf:type owl:NamedIndividual ,
+                                                                                                    :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/b/beer_garden_53
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/b/beer_garden_53> rdf:type owl:NamedIndividual ,
+                                                                                                        :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/b/beer_hall_54
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/b/beer_hall_54> rdf:type owl:NamedIndividual ,
+                                                                                                      :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/b/berth_55
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/b/berth_55> rdf:type owl:NamedIndividual ,
+                                                                                                  :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/b/biology_laboratory_56
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/b/biology_laboratory_56> rdf:type owl:NamedIndividual ,
+                                                                                                               :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/b/boardwalk_57
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/b/boardwalk_57> rdf:type owl:NamedIndividual ,
+                                                                                                      :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/b/boat_deck_58
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/b/boat_deck_58> rdf:type owl:NamedIndividual ,
+                                                                                                      :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/b/boathouse_59
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/b/boathouse_59> rdf:type owl:NamedIndividual ,
+                                                                                                      :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/b/bookstore_60
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/b/bookstore_60> rdf:type owl:NamedIndividual ,
+                                                                                                      :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/b/botanical_garden_62
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/b/botanical_garden_62> rdf:type owl:NamedIndividual ,
+                                                                                                             :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/b/bowling_alley_64
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/b/bowling_alley_64> rdf:type owl:NamedIndividual ,
+                                                                                                          :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/b/boxing_ring_65
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/b/boxing_ring_65> rdf:type owl:NamedIndividual ,
+                                                                                                        :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/b/bridge_66
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/b/bridge_66> rdf:type owl:NamedIndividual ,
+                                                                                                   :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/b/building_facade_67
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/b/building_facade_67> rdf:type owl:NamedIndividual ,
+                                                                                                            :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/b/bullring_68
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/b/bullring_68> rdf:type owl:NamedIndividual ,
+                                                                                                     :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/b/burial_chamber_69
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/b/burial_chamber_69> rdf:type owl:NamedIndividual ,
+                                                                                                           :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/b/bus_interior_70
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/b/bus_interior_70> rdf:type owl:NamedIndividual ,
+                                                                                                         :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/b/butchers_shop_72
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/b/butchers_shop_72> rdf:type owl:NamedIndividual ,
+                                                                                                          :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/b/butte_73
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/b/butte_73> rdf:type owl:NamedIndividual ,
+                                                                                                  :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/b/bakery/shop_31
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/b/bakery/shop_31> rdf:type owl:NamedIndividual ,
+                                                                                                        :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/b/balcony/exterior_32
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/b/balcony/exterior_32> rdf:type owl:NamedIndividual ,
+                                                                                                             :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/b/balcony/interior_33
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/b/balcony/interior_33> rdf:type owl:NamedIndividual ,
+                                                                                                             :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/b/bazaar/outdoor_47
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/b/bazaar/outdoor_47> rdf:type owl:NamedIndividual ,
+                                                                                                           :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/c/cafeteria_75
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/c/cafeteria_75> rdf:type owl:NamedIndividual ,
+                                                                                                      :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/c/campsite_76
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/c/campsite_76> rdf:type owl:NamedIndividual ,
+                                                                                                     :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/c/campus_77
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/c/campus_77> rdf:type owl:NamedIndividual ,
+                                                                                                   :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/c/candy_store_80
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/c/candy_store_80> rdf:type owl:NamedIndividual ,
+                                                                                                        :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/c/canyon_81
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/c/canyon_81> rdf:type owl:NamedIndividual ,
+                                                                                                   :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/c/car_interior_82
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/c/car_interior_82> rdf:type owl:NamedIndividual ,
+                                                                                                         :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/c/carrousel_83
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/c/carrousel_83> rdf:type owl:NamedIndividual ,
+                                                                                                      :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/c/castle_84
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/c/castle_84> rdf:type owl:NamedIndividual ,
+                                                                                                   :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/c/catacomb_85
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/c/catacomb_85> rdf:type owl:NamedIndividual ,
+                                                                                                     :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/c/cemetery_86
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/c/cemetery_86> rdf:type owl:NamedIndividual ,
+                                                                                                     :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/c/chalet_87
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/c/chalet_87> rdf:type owl:NamedIndividual ,
+                                                                                                   :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/c/chemistry_lab_88
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/c/chemistry_lab_88> rdf:type owl:NamedIndividual ,
+                                                                                                          :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/c/childs_room_89
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/c/childs_room_89> rdf:type owl:NamedIndividual ,
+                                                                                                        :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/c/classroom_92
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/c/classroom_92> rdf:type owl:NamedIndividual ,
+                                                                                                      :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/c/clean_room_93
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/c/clean_room_93> rdf:type owl:NamedIndividual ,
+                                                                                                       :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/c/cliff_94
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/c/cliff_94> rdf:type owl:NamedIndividual ,
+                                                                                                  :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/c/closet_95
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/c/closet_95> rdf:type owl:NamedIndividual ,
+                                                                                                   :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/c/clothing_store_96
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/c/clothing_store_96> rdf:type owl:NamedIndividual ,
+                                                                                                           :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/c/coast_97
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/c/coast_97> rdf:type owl:NamedIndividual ,
+                                                                                                  :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/c/cockpit_98
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/c/cockpit_98> rdf:type owl:NamedIndividual ,
+                                                                                                    :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/c/coffee_shop_99
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/c/coffee_shop_99> rdf:type owl:NamedIndividual ,
+                                                                                                        :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/c/computer_room_100
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/c/computer_room_100> rdf:type owl:NamedIndividual ,
+                                                                                                           :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/c/conference_center_101
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/c/conference_center_101> rdf:type owl:NamedIndividual ,
+                                                                                                               :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/c/conference_room_102
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/c/conference_room_102> rdf:type owl:NamedIndividual ,
+                                                                                                             :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/c/construction_site_103
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/c/construction_site_103> rdf:type owl:NamedIndividual ,
+                                                                                                               :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/c/corn_field_104
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/c/corn_field_104> rdf:type owl:NamedIndividual ,
+                                                                                                        :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/c/corral_105
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/c/corral_105> rdf:type owl:NamedIndividual ,
+                                                                                                    :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/c/corridor_106
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/c/corridor_106> rdf:type owl:NamedIndividual ,
+                                                                                                      :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/c/cottage_107
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/c/cottage_107> rdf:type owl:NamedIndividual ,
+                                                                                                     :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/c/courthouse_108
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/c/courthouse_108> rdf:type owl:NamedIndividual ,
+                                                                                                        :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/c/courtyard_109
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/c/courtyard_109> rdf:type owl:NamedIndividual ,
+                                                                                                       :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/c/creek_110
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/c/creek_110> rdf:type owl:NamedIndividual ,
+                                                                                                   :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/c/crevasse_111
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/c/crevasse_111> rdf:type owl:NamedIndividual ,
+                                                                                                      :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/c/crosswalk_112
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/c/crosswalk_112> rdf:type owl:NamedIndividual ,
+                                                                                                       :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/c/cabin/outdoor_74
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/c/cabin/outdoor_74> rdf:type owl:NamedIndividual ,
+                                                                                                          :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/c/canal/natural_78
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/c/canal/natural_78> rdf:type owl:NamedIndividual ,
+                                                                                                          :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/c/canal/urban_79
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/c/canal/urban_79> rdf:type owl:NamedIndividual ,
+                                                                                                        :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/c/church/outdoor_91
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/c/church/outdoor_91> rdf:type owl:NamedIndividual ,
+                                                                                                           :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/d/dam_113
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/d/dam_113> rdf:type owl:NamedIndividual ,
+                                                                                                 :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/d/delicatessen_114
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/d/delicatessen_114> rdf:type owl:NamedIndividual ,
+                                                                                                          :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/d/department_store_115
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/d/department_store_115> rdf:type owl:NamedIndividual ,
+                                                                                                              :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/d/desert_road_118
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/d/desert_road_118> rdf:type owl:NamedIndividual ,
+                                                                                                         :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/d/dining_hall_120
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/d/dining_hall_120> rdf:type owl:NamedIndividual ,
+                                                                                                         :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/d/dining_room_121
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/d/dining_room_121> rdf:type owl:NamedIndividual ,
+                                                                                                         :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/d/discotheque_122
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/d/discotheque_122> rdf:type owl:NamedIndividual ,
+                                                                                                         :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/d/dorm_room_124
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/d/dorm_room_124> rdf:type owl:NamedIndividual ,
+                                                                                                       :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/d/downtown_125
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/d/downtown_125> rdf:type owl:NamedIndividual ,
+                                                                                                      :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/d/dressing_room_126
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/d/dressing_room_126> rdf:type owl:NamedIndividual ,
+                                                                                                           :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/d/driveway_127
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/d/driveway_127> rdf:type owl:NamedIndividual ,
+                                                                                                      :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/d/drugstore_128
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/d/drugstore_128> rdf:type owl:NamedIndividual ,
+                                                                                                       :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/d/desert/sand_116
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/d/desert/sand_116> rdf:type owl:NamedIndividual ,
+                                                                                                         :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/d/desert/vegetation_117
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/d/desert/vegetation_117> rdf:type owl:NamedIndividual ,
+                                                                                                               :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/d/diner/outdoor_119
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/d/diner/outdoor_119> rdf:type owl:NamedIndividual ,
+                                                                                                           :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/d/doorway/outdoor_123
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/d/doorway/outdoor_123> rdf:type owl:NamedIndividual ,
+                                                                                                             :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/e/elevator_lobby_130
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/e/elevator_lobby_130> rdf:type owl:NamedIndividual ,
+                                                                                                            :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/e/elevator_shaft_131
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/e/elevator_shaft_131> rdf:type owl:NamedIndividual ,
+                                                                                                            :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/e/embassy_132
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/e/embassy_132> rdf:type owl:NamedIndividual ,
+                                                                                                     :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/e/engine_room_133
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/e/engine_room_133> rdf:type owl:NamedIndividual ,
+                                                                                                         :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/e/entrance_hall_134
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/e/entrance_hall_134> rdf:type owl:NamedIndividual ,
+                                                                                                           :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/e/excavation_136
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/e/excavation_136> rdf:type owl:NamedIndividual ,
+                                                                                                        :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/e/elevator/door_129
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/e/elevator/door_129> rdf:type owl:NamedIndividual ,
+                                                                                                           :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/f/fabric_store_137
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/f/fabric_store_137> rdf:type owl:NamedIndividual ,
+                                                                                                          :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/f/farm_138
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/f/farm_138> rdf:type owl:NamedIndividual ,
+                                                                                                  :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/f/fastfood_restaurant_139
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/f/fastfood_restaurant_139> rdf:type owl:NamedIndividual ,
+                                                                                                                 :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/f/field_road_142
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/f/field_road_142> rdf:type owl:NamedIndividual ,
+                                                                                                        :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/f/fire_escape_143
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/f/fire_escape_143> rdf:type owl:NamedIndividual ,
+                                                                                                         :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/f/fire_station_144
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/f/fire_station_144> rdf:type owl:NamedIndividual ,
+                                                                                                          :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/f/fishpond_145
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/f/fishpond_145> rdf:type owl:NamedIndividual ,
+                                                                                                      :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/f/food_court_148
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/f/food_court_148> rdf:type owl:NamedIndividual ,
+                                                                                                        :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/f/football_field_149
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/f/football_field_149> rdf:type owl:NamedIndividual ,
+                                                                                                            :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/f/forest_path_151
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/f/forest_path_151> rdf:type owl:NamedIndividual ,
+                                                                                                         :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/f/forest_road_152
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/f/forest_road_152> rdf:type owl:NamedIndividual ,
+                                                                                                         :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/f/formal_garden_153
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/f/formal_garden_153> rdf:type owl:NamedIndividual ,
+                                                                                                           :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/f/fountain_154
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/f/fountain_154> rdf:type owl:NamedIndividual ,
+                                                                                                      :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/f/field/cultivated_140
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/f/field/cultivated_140> rdf:type owl:NamedIndividual ,
+                                                                                                              :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/f/field/wild_141
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/f/field/wild_141> rdf:type owl:NamedIndividual ,
+                                                                                                        :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/f/forest/broadleaf_150
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/f/forest/broadleaf_150> rdf:type owl:NamedIndividual ,
+                                                                                                              :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/g/galley_155
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/g/galley_155> rdf:type owl:NamedIndividual ,
+                                                                                                    :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/g/gas_station_158
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/g/gas_station_158> rdf:type owl:NamedIndividual ,
+                                                                                                         :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/g/gift_shop_162
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/g/gift_shop_162> rdf:type owl:NamedIndividual ,
+                                                                                                       :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/g/glacier_163
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/g/glacier_163> rdf:type owl:NamedIndividual ,
+                                                                                                     :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/g/golf_course_164
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/g/golf_course_164> rdf:type owl:NamedIndividual ,
+                                                                                                         :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/g/grotto_167
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/g/grotto_167> rdf:type owl:NamedIndividual ,
+                                                                                                    :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/g/garage/outdoor_157
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/g/garage/outdoor_157> rdf:type owl:NamedIndividual ,
+                                                                                                            :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/g/gazebo/exterior_159
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/g/gazebo/exterior_159> rdf:type owl:NamedIndividual ,
+                                                                                                             :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/g/general_store/outdoor_161
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/g/general_store/outdoor_161> rdf:type owl:NamedIndividual ,
+                                                                                                                   :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/g/greenhouse/outdoor_166
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/g/greenhouse/outdoor_166> rdf:type owl:NamedIndividual ,
+                                                                                                                :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/h/harbor_171
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/h/harbor_171> rdf:type owl:NamedIndividual ,
+                                                                                                    :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/h/hardware_store_172
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/h/hardware_store_172> rdf:type owl:NamedIndividual ,
+                                                                                                            :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/h/hayfield_173
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/h/hayfield_173> rdf:type owl:NamedIndividual ,
+                                                                                                      :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/h/heliport_174
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/h/heliport_174> rdf:type owl:NamedIndividual ,
+                                                                                                      :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/h/highway_175
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/h/highway_175> rdf:type owl:NamedIndividual ,
+                                                                                                     :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/h/home_office_176
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/h/home_office_176> rdf:type owl:NamedIndividual ,
+                                                                                                         :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/h/home_theater_177
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/h/home_theater_177> rdf:type owl:NamedIndividual ,
+                                                                                                          :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/h/hospital_178
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/h/hospital_178> rdf:type owl:NamedIndividual ,
+                                                                                                      :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/h/hospital_room_179
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/h/hospital_room_179> rdf:type owl:NamedIndividual ,
+                                                                                                           :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/h/hot_spring_180
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/h/hot_spring_180> rdf:type owl:NamedIndividual ,
+                                                                                                        :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/h/hotel_room_182
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/h/hotel_room_182> rdf:type owl:NamedIndividual ,
+                                                                                                        :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/h/house_183
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/h/house_183> rdf:type owl:NamedIndividual ,
+                                                                                                   :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/h/hangar/outdoor_170
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/h/hangar/outdoor_170> rdf:type owl:NamedIndividual ,
+                                                                                                            :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/h/hotel/outdoor_181
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/h/hotel/outdoor_181> rdf:type owl:NamedIndividual ,
+                                                                                                           :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/h/hunting_lodge/outdoor_184
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/h/hunting_lodge/outdoor_184> rdf:type owl:NamedIndividual ,
+                                                                                                                   :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/i/ice_cream_parlor_185
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/i/ice_cream_parlor_185> rdf:type owl:NamedIndividual ,
+                                                                                                              :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/i/ice_floe_186
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/i/ice_floe_186> rdf:type owl:NamedIndividual ,
+                                                                                                      :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/i/ice_shelf_187
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/i/ice_shelf_187> rdf:type owl:NamedIndividual ,
+                                                                                                       :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/i/iceberg_190
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/i/iceberg_190> rdf:type owl:NamedIndividual ,
+                                                                                                     :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/i/igloo_191
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/i/igloo_191> rdf:type owl:NamedIndividual ,
+                                                                                                   :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/i/industrial_area_192
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/i/industrial_area_192> rdf:type owl:NamedIndividual ,
+                                                                                                             :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/i/islet_194
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/i/islet_194> rdf:type owl:NamedIndividual ,
+                                                                                                   :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/i/ice_skating_rink/outdoor_189
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/i/ice_skating_rink/outdoor_189> rdf:type owl:NamedIndividual ,
+                                                                                                                      :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/i/inn/outdoor_193
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/i/inn/outdoor_193> rdf:type owl:NamedIndividual ,
+                                                                                                         :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/j/jail_cell_196
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/j/jail_cell_196> rdf:type owl:NamedIndividual ,
+                                                                                                       :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/j/japanese_garden_197
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/j/japanese_garden_197> rdf:type owl:NamedIndividual ,
+                                                                                                             :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/j/jewelry_shop_198
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/j/jewelry_shop_198> rdf:type owl:NamedIndividual ,
+                                                                                                          :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/j/junkyard_199
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/j/junkyard_199> rdf:type owl:NamedIndividual ,
+                                                                                                      :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/k/kasbah_200
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/k/kasbah_200> rdf:type owl:NamedIndividual ,
+                                                                                                    :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/k/kindergarden_classroom_202
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/k/kindergarden_classroom_202> rdf:type owl:NamedIndividual ,
+                                                                                                                    :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/k/kitchen_203
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/k/kitchen_203> rdf:type owl:NamedIndividual ,
+                                                                                                     :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/k/kennel/outdoor_201
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/k/kennel/outdoor_201> rdf:type owl:NamedIndividual ,
+                                                                                                            :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/l/lagoon_204
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/l/lagoon_204> rdf:type owl:NamedIndividual ,
+                                                                                                    :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/l/landfill_206
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/l/landfill_206> rdf:type owl:NamedIndividual ,
+                                                                                                      :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/l/landing_deck_207
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/l/landing_deck_207> rdf:type owl:NamedIndividual ,
+                                                                                                          :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/l/laundromat_208
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/l/laundromat_208> rdf:type owl:NamedIndividual ,
+                                                                                                        :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/l/lawn_209
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/l/lawn_209> rdf:type owl:NamedIndividual ,
+                                                                                                  :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/l/lecture_room_210
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/l/lecture_room_210> rdf:type owl:NamedIndividual ,
+                                                                                                          :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/l/legislative_chamber_211
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/l/legislative_chamber_211> rdf:type owl:NamedIndividual ,
+                                                                                                                 :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/l/lighthouse_214
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/l/lighthouse_214> rdf:type owl:NamedIndividual ,
+                                                                                                        :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/l/living_room_215
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/l/living_room_215> rdf:type owl:NamedIndividual ,
+                                                                                                         :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/l/loading_dock_216
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/l/loading_dock_216> rdf:type owl:NamedIndividual ,
+                                                                                                          :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/l/lobby_217
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/l/lobby_217> rdf:type owl:NamedIndividual ,
+                                                                                                   :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/l/lock_chamber_218
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/l/lock_chamber_218> rdf:type owl:NamedIndividual ,
+                                                                                                          :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/l/locker_room_219
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/l/locker_room_219> rdf:type owl:NamedIndividual ,
+                                                                                                         :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/l/lake/natural_205
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/l/lake/natural_205> rdf:type owl:NamedIndividual ,
+                                                                                                          :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/l/library/outdoor_213
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/l/library/outdoor_213> rdf:type owl:NamedIndividual ,
+                                                                                                             :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/m/mansion_220
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/m/mansion_220> rdf:type owl:NamedIndividual ,
+                                                                                                     :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/m/manufactured_home_221
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/m/manufactured_home_221> rdf:type owl:NamedIndividual ,
+                                                                                                               :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/m/marsh_224
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/m/marsh_224> rdf:type owl:NamedIndividual ,
+                                                                                                   :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/m/martial_arts_gym_225
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/m/martial_arts_gym_225> rdf:type owl:NamedIndividual ,
+                                                                                                              :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/m/mausoleum_226
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/m/mausoleum_226> rdf:type owl:NamedIndividual ,
+                                                                                                       :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/m/medina_227
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/m/medina_227> rdf:type owl:NamedIndividual ,
+                                                                                                    :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/m/mezzanine_228
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/m/mezzanine_228> rdf:type owl:NamedIndividual ,
+                                                                                                       :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/m/motel_231
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/m/motel_231> rdf:type owl:NamedIndividual ,
+                                                                                                   :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/m/mountain_232
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/m/mountain_232> rdf:type owl:NamedIndividual ,
+                                                                                                      :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/m/mountain_path_233
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/m/mountain_path_233> rdf:type owl:NamedIndividual ,
+                                                                                                           :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/m/mountain_snowy_234
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/m/mountain_snowy_234> rdf:type owl:NamedIndividual ,
+                                                                                                            :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/m/music_studio_238
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/m/music_studio_238> rdf:type owl:NamedIndividual ,
+                                                                                                          :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/m/market/outdoor_223
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/m/market/outdoor_223> rdf:type owl:NamedIndividual ,
+                                                                                                            :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/m/moat/water_229
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/m/moat/water_229> rdf:type owl:NamedIndividual ,
+                                                                                                        :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/m/mosque/outdoor_230
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/m/mosque/outdoor_230> rdf:type owl:NamedIndividual ,
+                                                                                                            :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/m/museum/outdoor_237
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/m/museum/outdoor_237> rdf:type owl:NamedIndividual ,
+                                                                                                            :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/n/natural_history_museum_239
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/n/natural_history_museum_239> rdf:type owl:NamedIndividual ,
+                                                                                                                    :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/n/nursery_240
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/n/nursery_240> rdf:type owl:NamedIndividual ,
+                                                                                                     :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/n/nursing_home_241
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/n/nursing_home_241> rdf:type owl:NamedIndividual ,
+                                                                                                          :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/o/oast_house_242
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/o/oast_house_242> rdf:type owl:NamedIndividual ,
+                                                                                                        :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/o/ocean_243
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/o/ocean_243> rdf:type owl:NamedIndividual ,
+                                                                                                   :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/o/office_244
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/o/office_244> rdf:type owl:NamedIndividual ,
+                                                                                                    :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/o/office_building_245
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/o/office_building_245> rdf:type owl:NamedIndividual ,
+                                                                                                             :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/o/office_cubicles_246
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/o/office_cubicles_246> rdf:type owl:NamedIndividual ,
+                                                                                                             :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/o/oilrig_247
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/o/oilrig_247> rdf:type owl:NamedIndividual ,
+                                                                                                    :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/o/operating_room_248
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/o/operating_room_248> rdf:type owl:NamedIndividual ,
+                                                                                                            :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/o/orchard_249
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/o/orchard_249> rdf:type owl:NamedIndividual ,
+                                                                                                     :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/o/orchestra_pit_250
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/o/orchestra_pit_250> rdf:type owl:NamedIndividual ,
+                                                                                                           :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/p/pagoda_251
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/p/pagoda_251> rdf:type owl:NamedIndividual ,
+                                                                                                    :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/p/palace_252
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/p/palace_252> rdf:type owl:NamedIndividual ,
+                                                                                                    :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/p/pantry_253
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/p/pantry_253> rdf:type owl:NamedIndividual ,
+                                                                                                    :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/p/park_254
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/p/park_254> rdf:type owl:NamedIndividual ,
+                                                                                                  :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/p/parking_lot_257
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/p/parking_lot_257> rdf:type owl:NamedIndividual ,
+                                                                                                         :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/p/pasture_258
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/p/pasture_258> rdf:type owl:NamedIndividual ,
+                                                                                                     :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/p/patio_259
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/p/patio_259> rdf:type owl:NamedIndividual ,
+                                                                                                   :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/p/pavilion_260
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/p/pavilion_260> rdf:type owl:NamedIndividual ,
+                                                                                                      :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/p/pet_shop_261
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/p/pet_shop_261> rdf:type owl:NamedIndividual ,
+                                                                                                      :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/p/pharmacy_262
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/p/pharmacy_262> rdf:type owl:NamedIndividual ,
+                                                                                                      :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/p/phone_booth_263
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/p/phone_booth_263> rdf:type owl:NamedIndividual ,
+                                                                                                         :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/p/physics_laboratory_264
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/p/physics_laboratory_264> rdf:type owl:NamedIndividual ,
+                                                                                                                :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/p/picnic_area_265
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/p/picnic_area_265> rdf:type owl:NamedIndividual ,
+                                                                                                         :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/p/pier_266
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/p/pier_266> rdf:type owl:NamedIndividual ,
+                                                                                                  :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/p/pizzeria_267
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/p/pizzeria_267> rdf:type owl:NamedIndividual ,
+                                                                                                      :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/p/playground_268
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/p/playground_268> rdf:type owl:NamedIndividual ,
+                                                                                                        :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/p/playroom_269
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/p/playroom_269> rdf:type owl:NamedIndividual ,
+                                                                                                      :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/p/plaza_270
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/p/plaza_270> rdf:type owl:NamedIndividual ,
+                                                                                                   :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/p/pond_271
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/p/pond_271> rdf:type owl:NamedIndividual ,
+                                                                                                  :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/p/porch_272
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/p/porch_272> rdf:type owl:NamedIndividual ,
+                                                                                                   :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/p/promenade_273
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/p/promenade_273> rdf:type owl:NamedIndividual ,
+                                                                                                       :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/p/parking_garage/outdoor_256
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/p/parking_garage/outdoor_256> rdf:type owl:NamedIndividual ,
+                                                                                                                    :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/r/racecourse_275
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/r/racecourse_275> rdf:type owl:NamedIndividual ,
+                                                                                                        :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/r/raceway_276
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/r/raceway_276> rdf:type owl:NamedIndividual ,
+                                                                                                     :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/r/raft_277
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/r/raft_277> rdf:type owl:NamedIndividual ,
+                                                                                                  :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/r/railroad_track_278
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/r/railroad_track_278> rdf:type owl:NamedIndividual ,
+                                                                                                            :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/r/rainforest_279
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/r/rainforest_279> rdf:type owl:NamedIndividual ,
+                                                                                                        :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/r/reception_280
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/r/reception_280> rdf:type owl:NamedIndividual ,
+                                                                                                       :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/r/recreation_room_281
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/r/recreation_room_281> rdf:type owl:NamedIndividual ,
+                                                                                                             :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/r/repair_shop_282
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/r/repair_shop_282> rdf:type owl:NamedIndividual ,
+                                                                                                         :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/r/residential_neighborhood_283
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/r/residential_neighborhood_283> rdf:type owl:NamedIndividual ,
+                                                                                                                      :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/r/restaurant_284
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/r/restaurant_284> rdf:type owl:NamedIndividual ,
+                                                                                                        :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/r/restaurant_kitchen_285
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/r/restaurant_kitchen_285> rdf:type owl:NamedIndividual ,
+                                                                                                                :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/r/restaurant_patio_286
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/r/restaurant_patio_286> rdf:type owl:NamedIndividual ,
+                                                                                                              :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/r/rice_paddy_287
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/r/rice_paddy_287> rdf:type owl:NamedIndividual ,
+                                                                                                        :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/r/river_288
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/r/river_288> rdf:type owl:NamedIndividual ,
+                                                                                                   :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/r/rock_arch_289
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/r/rock_arch_289> rdf:type owl:NamedIndividual ,
+                                                                                                       :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/r/roof_garden_290
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/r/roof_garden_290> rdf:type owl:NamedIndividual ,
+                                                                                                         :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/r/rope_bridge_291
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/r/rope_bridge_291> rdf:type owl:NamedIndividual ,
+                                                                                                         :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/r/ruin_292
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/r/ruin_292> rdf:type owl:NamedIndividual ,
+                                                                                                  :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/r/runway_293
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/r/runway_293> rdf:type owl:NamedIndividual ,
+                                                                                                    :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/s/sandbox_294
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/s/sandbox_294> rdf:type owl:NamedIndividual ,
+                                                                                                     :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/s/sauna_295
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/s/sauna_295> rdf:type owl:NamedIndividual ,
+                                                                                                   :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/s/schoolhouse_296
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/s/schoolhouse_296> rdf:type owl:NamedIndividual ,
+                                                                                                         :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/s/science_museum_297
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/s/science_museum_297> rdf:type owl:NamedIndividual ,
+                                                                                                            :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/s/server_room_298
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/s/server_room_298> rdf:type owl:NamedIndividual ,
+                                                                                                         :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/s/shed_299
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/s/shed_299> rdf:type owl:NamedIndividual ,
+                                                                                                  :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/s/shoe_shop_300
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/s/shoe_shop_300> rdf:type owl:NamedIndividual ,
+                                                                                                       :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/s/shopfront_301
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/s/shopfront_301> rdf:type owl:NamedIndividual ,
+                                                                                                       :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/s/shower_303
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/s/shower_303> rdf:type owl:NamedIndividual ,
+                                                                                                    :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/s/ski_resort_304
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/s/ski_resort_304> rdf:type owl:NamedIndividual ,
+                                                                                                        :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/s/ski_slope_305
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/s/ski_slope_305> rdf:type owl:NamedIndividual ,
+                                                                                                       :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/s/sky_306
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/s/sky_306> rdf:type owl:NamedIndividual ,
+                                                                                                 :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/s/skyscraper_307
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/s/skyscraper_307> rdf:type owl:NamedIndividual ,
+                                                                                                        :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/s/slum_308
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/s/slum_308> rdf:type owl:NamedIndividual ,
+                                                                                                  :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/s/snowfield_309
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/s/snowfield_309> rdf:type owl:NamedIndividual ,
+                                                                                                       :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/s/soccer_field_310
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/s/soccer_field_310> rdf:type owl:NamedIndividual ,
+                                                                                                          :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/s/stable_311
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/s/stable_311> rdf:type owl:NamedIndividual ,
+                                                                                                    :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/s/staircase_317
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/s/staircase_317> rdf:type owl:NamedIndividual ,
+                                                                                                       :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/s/storage_room_318
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/s/storage_room_318> rdf:type owl:NamedIndividual ,
+                                                                                                          :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/s/street_319
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/s/street_319> rdf:type owl:NamedIndividual ,
+                                                                                                    :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/s/supermarket_321
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/s/supermarket_321> rdf:type owl:NamedIndividual ,
+                                                                                                         :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/s/sushi_bar_322
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/s/sushi_bar_322> rdf:type owl:NamedIndividual ,
+                                                                                                       :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/s/swamp_323
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/s/swamp_323> rdf:type owl:NamedIndividual ,
+                                                                                                   :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/s/swimming_hole_324
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/s/swimming_hole_324> rdf:type owl:NamedIndividual ,
+                                                                                                           :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/s/stadium/baseball_312
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/s/stadium/baseball_312> rdf:type owl:NamedIndividual ,
+                                                                                                              :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/s/stadium/football_313
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/s/stadium/football_313> rdf:type owl:NamedIndividual ,
+                                                                                                              :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/s/stadium/soccer_314
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/s/stadium/soccer_314> rdf:type owl:NamedIndividual ,
+                                                                                                            :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/s/stage/outdoor_316
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/s/stage/outdoor_316> rdf:type owl:NamedIndividual ,
+                                                                                                           :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/s/subway_station/platform_320
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/s/subway_station/platform_320> rdf:type owl:NamedIndividual ,
+                                                                                                                     :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/s/swimming_pool/outdoor_326
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/s/swimming_pool/outdoor_326> rdf:type owl:NamedIndividual ,
+                                                                                                                   :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/s/synagogue/outdoor_327
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/s/synagogue/outdoor_327> rdf:type owl:NamedIndividual ,
+                                                                                                               :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/t/television_room_328
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/t/television_room_328> rdf:type owl:NamedIndividual ,
+                                                                                                             :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/t/television_studio_329
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/t/television_studio_329> rdf:type owl:NamedIndividual ,
+                                                                                                               :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/t/throne_room_331
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/t/throne_room_331> rdf:type owl:NamedIndividual ,
+                                                                                                         :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/t/ticket_booth_332
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/t/ticket_booth_332> rdf:type owl:NamedIndividual ,
+                                                                                                          :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/t/topiary_garden_333
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/t/topiary_garden_333> rdf:type owl:NamedIndividual ,
+                                                                                                            :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/t/tower_334
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/t/tower_334> rdf:type owl:NamedIndividual ,
+                                                                                                   :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/t/toyshop_335
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/t/toyshop_335> rdf:type owl:NamedIndividual ,
+                                                                                                     :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/t/train_interior_336
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/t/train_interior_336> rdf:type owl:NamedIndividual ,
+                                                                                                            :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/t/tree_farm_338
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/t/tree_farm_338> rdf:type owl:NamedIndividual ,
+                                                                                                       :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/t/tree_house_339
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/t/tree_house_339> rdf:type owl:NamedIndividual ,
+                                                                                                        :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/t/trench_340
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/t/trench_340> rdf:type owl:NamedIndividual ,
+                                                                                                    :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/t/tundra_341
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/t/tundra_341> rdf:type owl:NamedIndividual ,
+                                                                                                    :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/t/temple/asia_330
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/t/temple/asia_330> rdf:type owl:NamedIndividual ,
+                                                                                                         :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/t/train_station/platform_337
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/t/train_station/platform_337> rdf:type owl:NamedIndividual ,
+                                                                                                                    :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/u/utility_room_343
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/u/utility_room_343> rdf:type owl:NamedIndividual ,
+                                                                                                          :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/u/underwater/ocean_deep_342
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/u/underwater/ocean_deep_342> rdf:type owl:NamedIndividual ,
+                                                                                                                   :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/v/valley_344
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/v/valley_344> rdf:type owl:NamedIndividual ,
+                                                                                                    :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/v/vegetable_garden_345
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/v/vegetable_garden_345> rdf:type owl:NamedIndividual ,
+                                                                                                              :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/v/veterinarians_office_346
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/v/veterinarians_office_346> rdf:type owl:NamedIndividual ,
+                                                                                                                  :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/v/viaduct_347
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/v/viaduct_347> rdf:type owl:NamedIndividual ,
+                                                                                                     :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/v/village_348
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/v/village_348> rdf:type owl:NamedIndividual ,
+                                                                                                     :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/v/vineyard_349
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/v/vineyard_349> rdf:type owl:NamedIndividual ,
+                                                                                                      :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/v/volcano_350
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/v/volcano_350> rdf:type owl:NamedIndividual ,
+                                                                                                     :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/v/volleyball_court/outdoor_351
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/v/volleyball_court/outdoor_351> rdf:type owl:NamedIndividual ,
+                                                                                                                      :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/w/waiting_room_352
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/w/waiting_room_352> rdf:type owl:NamedIndividual ,
+                                                                                                          :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/w/water_park_353
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/w/water_park_353> rdf:type owl:NamedIndividual ,
+                                                                                                        :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/w/water_tower_354
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/w/water_tower_354> rdf:type owl:NamedIndividual ,
+                                                                                                         :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/w/waterfall_355
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/w/waterfall_355> rdf:type owl:NamedIndividual ,
+                                                                                                       :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/w/watering_hole_356
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/w/watering_hole_356> rdf:type owl:NamedIndividual ,
+                                                                                                           :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/w/wave_357
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/w/wave_357> rdf:type owl:NamedIndividual ,
+                                                                                                  :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/w/wet_bar_358
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/w/wet_bar_358> rdf:type owl:NamedIndividual ,
+                                                                                                     :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/w/wheat_field_359
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/w/wheat_field_359> rdf:type owl:NamedIndividual ,
+                                                                                                         :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/w/wind_farm_360
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/w/wind_farm_360> rdf:type owl:NamedIndividual ,
+                                                                                                       :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/w/windmill_361
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/w/windmill_361> rdf:type owl:NamedIndividual ,
+                                                                                                      :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/y/yard_362
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/y/yard_362> rdf:type owl:NamedIndividual ,
+                                                                                                  :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/y/youth_hostel_363
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/y/youth_hostel_363> rdf:type owl:NamedIndividual ,
+                                                                                                          :VergeLabel .
+
+
+###  http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/z/zen_garden_364
+<http://www.semanticweb.org/estathop/ontologies/2021/9/untitled-ontology-17#/z/zen_garden_364> rdf:type owl:NamedIndividual ,
+                                                                                                        :VergeLabel .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
